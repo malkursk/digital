@@ -1,5 +1,6 @@
 .txt-center {
-      text-align: center;
+    text-align: center;
+
   }
 
 .txt-under {
@@ -8,11 +9,11 @@
 
 /* внешние границы таблицы серого цвета толщиной 1px */
 table {
-    border: 1px solid blueviolet;
+    border: 1px solid grey;
  }
  /* границы ячеек первого ряда таблицы */
  th {
-    border: 1px dotted grey;
+    border: 1px solid grey;
  }
  /* границы ячеек тела таблицы */
  td {
@@ -21,9 +22,3 @@ table {
  .txt-red {
     color:red;
  }
-
- .txt-i {
-   font-style:italic;
-}
-
-
