@@ -1,0 +1,38 @@
+.txt-center {
+    text-align: center;
+
+  }
+
+.txt-under {
+    text-decoration: underline;
+}
+
+/* внешние границы таблицы серого цвета толщиной 1px */
+table {
+    border: 1px solid grey;
+ }
+ /* границы ячеек первого ряда таблицы */
+ th {
+    border: 1px solid grey;
+ }
+ /* границы ячеек тела таблицы */
+ td {
+    border: 1px solid grey;
+ }
+ .txt-red {
+    color:red;
+ }
+
+ .fio{
+   color:red;
+   text-align: center;
+}
+
+.Kod{
+   text-align: center;
+}
+
+.yellow{
+   color:rgb(163, 57, 163);
+   text-align: center;
+}

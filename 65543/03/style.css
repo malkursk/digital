@@ -1,0 +1,51 @@
+.txt-center {
+    text-align: center;
+    
+
+  }
+
+.txt-under {
+    text-decoration: underline;
+}
+
+/* внешние границы таблицы серого цвета толщиной 1px */
+table {
+    border: 1px solid grey;
+ }
+ /* границы ячеек первого ряда таблицы */
+ th {
+    border: 1px solid grey;
+ }
+ /* границы ячеек тела таблицы */
+ td {
+    border: 1px solid grey;
+ }
+ .txt-red {
+    color:red;
+    text-align: left;
+ }
+ .txt-green {
+   color:green;
+}
+.txt-blueviolet {
+   color:blueviolet;
+}
+.txt-blue {
+   color:blue;
+}
+.txt-pink {
+   color:pink;
+}
+.txt-olive {
+   color:olive;
+}
+.txt-purple {
+   color:purple;
+   text-align: left;
+}
+
+.txt-center-red {
+   text-align: center;
+   color:red;
+
+ }
