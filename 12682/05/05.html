@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html>
+<head>work 5</head>
 
-</head>
 <body>
     <h4>Програмирование на javascript</h4>
     6 -> 22
@@ -10,17 +11,18 @@
     Результат:
     <input class="out-component" value="скоро появится" readonly>
     <button class="convert-button">Конвентировать</button>
+    
     <script>
-        document.querySelector(`.convert-button`).addEventListener(`click`, onButtonClick);
+        document.querySelector('.convert-button').addEventListener('click', onButtonClick);
 
         function convert(number, inS, outS) {
-            return parsent(number, inS).toString(outS).toUpperCase();
+            return parseInt(number, inS).toString(outS).toUpperCase();
         }
 
         function onButtonClick(){
             const inNumber = document.querySelector('.in-component').value;
             result = convert(inNumber, 6, 22);
-            documet.querySelector('.out-component').value = result;
+            document.querySelector('.out-component').value = result;
         }
     </script>
     
