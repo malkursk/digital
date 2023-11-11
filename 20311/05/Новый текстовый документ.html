@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</body>
+   A=<input id="A" value="1"> <br>
+   B=<input id="B" value="3"> <br>
+   C=<input id="C" value="4"> <br>
+   <button onclick="findMax()">Выполнить</button>
+   Максимум из A, B, C: <br> <input id="R" value="подождите">
+
+   <script> 
+function findMax(){
+    A = document.getElementById('A').value
+    B = document.getElementById('B').value
+    C = document.getElementById('C').value
+    if (A>B) {
+        if (A>C) {
+            R = A
+        }
+        else{
+            R = C
+        }
+    }
+else{
+    if(B>C)
+        R=B
+    else
+        R = C
+}
+alert(R)
+document.getElementById('R').value = R
+}
+</script>
+</body>
+</html>
