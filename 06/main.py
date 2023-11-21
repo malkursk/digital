@@ -47,13 +47,27 @@ def pr6_task3(b1,b2):
     result = ''.join(reversed(result))
     return f'Результат (base {b2}) = {result}'
 
+def elka():
+    v = int(input('Ширина ветви = '))
+    n = int(input('Количество = '))    
+    res = ''
+    for j in range(0,n):
+        s=''
+        for i in range(0,v):
+            s+='*'
+            res+='s\n'
+            print(s)
+
+
 def main():
-    print('Выполнил: Иванов Сергей, 44-22-123')
+    print('Выполнил: Таныгин Михаил Порфирьевич, гр. 44-22-123 (00001)')
 
     again = True
     while again:
-        n = input('введите номер задания, который надо выполнить (1,2,3): ')
+        n = input('Режим: 0-ёлка, 1-сравнение, 2-сортировка, 3-конвертер. Выбираем = ')
         res = 'тут будет результат'
+        if n == '0':
+            res = elka()        
         if n == '1':
             res = pr6_task1()
         if n == '2':
@@ -61,7 +75,7 @@ def main():
         if n == '3':
             res = pr6_task3(2,10)
         print(res)
-        if input('Если надо ещё разок - жми 8') != '8':
+        if input('Введите 8 для повтора: ') != '8':
             again = False
             print('Спасибо за внимание!')
 
