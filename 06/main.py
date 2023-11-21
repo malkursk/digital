@@ -1,6 +1,6 @@
 def pr6_task1():
-    name = input('Имя:')
-    year = int(input('Год рождения:'))
+    name = input('Имя: ')
+    year = int(input('Год рождения: '))
     if (2023-year)>21:
         s = 'у Вас прекрасный возраст'    
     else:
@@ -11,9 +11,9 @@ def pr6_task1():
     return name + ', ' +s
 
 def pr6_task2():
-    p1 = input('друг 1:')
-    p2 = input('друг 2:')
-    p3 = input('друг 3:')
+    p1 = input('друг 1: ')
+    p2 = input('друг 2: ')
+    p3 = input('друг 3: ')
 
     m1 = p1.split()
     m2 = p2.split()
@@ -30,7 +30,7 @@ def pr6_task2():
     return m1[1] + ' ' + m2[1] + ' ' + m3[1]
 
 def pr6_task3(b1,b2):
-    v = input(f'Исходное число (base {b1}) = ')
+    v = input(f'Исходное число (base {b1}): ')
     if not (v and b1 and b2):
         return 'ошибка ввода'
     try:
@@ -48,8 +48,8 @@ def pr6_task3(b1,b2):
     return f'Результат (base {b2}) = {result}'
 
 def elka():
-    v = int(input('Ширина ветви = '))
-    n = int(input('Количество = '))    
+    v = int(input('Ширина ветви: '))
+    n = int(input('Количество: '))    
     res = ''
     for j in range(0,n):
         s=''
@@ -57,6 +57,7 @@ def elka():
             s+='*'
             res+='s\n'
             print(s)
+    return 'скоро Новый год!'
 
 
 def main():
@@ -64,7 +65,7 @@ def main():
 
     again = True
     while again:
-        n = input('Режим: 0-ёлка, 1-сравнение, 2-сортировка, 3-конвертер. Выбираем = ')
+        n = input('Режим: 0-Ёлка, 1-Сравнение, 2-Сортировка, 3-Конвертер. Ваш выбор: ')
         res = 'тут будет результат'
         if n == '0':
             res = elka()        
