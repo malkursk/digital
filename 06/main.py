@@ -29,6 +29,19 @@ def pr6_task2():
 
     return m1[1] + ' ' + m2[1] + ' ' + m3[1]
 
+def pr6_task2_clever():
+    n = int(input('количество друзей: '))    
+    print(f'строгий формат: ИМЯ пробел ГОД РОЖДЕНИЯ')
+    m = []
+    result = ''
+    for i in range (0,n):
+        s = ' '.join(list(reversed(input(f'Друг {i+1}: ').split())))
+        m.append(s)
+    m.sort(reverse = False)
+    for i in range (0,n):
+        result += m[i].split()[1] + ' '        
+    return 'По возрастанию г.р.: ' + result
+
 def pr6_task3(b1,b2):
     v = input(f'Исходное число (base {b1}): ')
     if not (v and b1 and b2):
@@ -75,8 +88,10 @@ def main():
             res = pr6_task2()
         if n == '3':
             res = pr6_task3(2,10)
+        if n == '4':
+            res = pr6_task2_clever()            
         print(res)
-        if input('Введите 8 для повтора: ') != '8':
+        if input('Введите 8 для повтора или другой символ для выхода: ') != '8':
             again = False
             print('Спасибо за внимание!')
 
