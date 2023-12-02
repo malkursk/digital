@@ -8,3 +8,6 @@ def page02(request):
 
 def page03(request):
     return render(request, '03/index.html')
+
+def calc(request, val):
+    return HttpResponse(f"Будем конвертировать: {val}")
