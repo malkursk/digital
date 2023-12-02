@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from digital.utils import converter
 
 def main(request):
     return HttpResponse("Добро пожаловать на главную!") 
@@ -10,4 +11,4 @@ def page03(request):
     return render(request, '03/index.html')
 
 def calc(request, val):
-    return HttpResponse(f"Будем конвертировать: {val}")
+    return HttpResponse(f"{converter(val)}")
