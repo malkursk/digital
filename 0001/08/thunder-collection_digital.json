@@ -1,0 +1,79 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "digital",
+    "dateExported": "2023-12-04T20:06:21.814Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5eda9114-27d8-4c84-8157-bc358bbd26d0",
+            "colId": "044d2850-35af-45c5-a3c6-7191d9c89efa",
+            "containerId": "",
+            "name": "calc",
+            "url": "{{host_swsu}}/calc/17",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-28T19:16:07.396Z",
+            "modified": "2023-12-04T19:25:04.682Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9a4e8b26-8329-42be-8adf-a1d09b99c181",
+            "colId": "044d2850-35af-45c5-a3c6-7191d9c89efa",
+            "containerId": "",
+            "name": "404",
+            "url": "{{host_swsu}}/calctYYYY",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-12-04T19:40:17.852Z",
+            "modified": "2023-12-04T19:40:25.764Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1d91805f-3d1b-4abb-aaa0-45e7e568d229",
+            "colId": "044d2850-35af-45c5-a3c6-7191d9c89efa",
+            "containerId": "",
+            "name": "root",
+            "url": "{{host_swsu}}/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-28T19:16:07.397Z",
+            "modified": "2023-12-04T19:25:03.188Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bdd3617a-e9de-41e5-bf94-61fbf0d92775",
+            "colId": "044d2850-35af-45c5-a3c6-7191d9c89efa",
+            "containerId": "",
+            "name": "02",
+            "url": "{{host_swsu}}/02",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-28T19:16:07.398Z",
+            "modified": "2023-12-04T19:25:11.999Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ecaba153-dbcc-4f19-9877-7474b70cff0e",
+            "colId": "044d2850-35af-45c5-a3c6-7191d9c89efa",
+            "containerId": "",
+            "name": "03",
+            "url": "{{host_swsu}}/03",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-11-28T19:16:07.399Z",
+            "modified": "2023-12-04T19:25:15.859Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -1,4 +1,4 @@
 # dev branch (for demo)
 *__pycache__*
-*.venv*
-0001/08/pr8/db.sqlite3
+*venv*
+*db.sql*
