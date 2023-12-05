@@ -1,0 +1,65 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "PR8",
+    "dateExported": "2023-12-05T16:55:59.531Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "164a6230-0e1b-4b62-bcc5-0bf6e0810efe",
+            "colId": "b9161747-3b22-49d3-854e-2ed49abc4e1a",
+            "containerId": "",
+            "name": "calc",
+            "url": "http://127.0.0.1:8000/calc/10",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-12-05T16:00:41.632Z",
+            "modified": "2023-12-05T16:01:31.083Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0daa9c2a-fc61-4f0e-a3ae-5c63dc2116c9",
+            "colId": "b9161747-3b22-49d3-854e-2ed49abc4e1a",
+            "containerId": "",
+            "name": "02",
+            "url": "http://127.0.0.1:8000/02/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-12-05T16:01:49.015Z",
+            "modified": "2023-12-05T16:02:18.622Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b2a60e89-3124-4a92-a8e7-01f69a9b7b4c",
+            "colId": "b9161747-3b22-49d3-854e-2ed49abc4e1a",
+            "containerId": "",
+            "name": "03",
+            "url": "http://127.0.0.1:8000/03/",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-12-05T16:01:54.591Z",
+            "modified": "2023-12-05T16:02:39.688Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f30f7946-55f6-4023-acba-5533bb2daffe",
+            "colId": "b9161747-3b22-49d3-854e-2ed49abc4e1a",
+            "containerId": "",
+            "name": "root",
+            "url": "http://127.0.0.1:8000",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-12-05T16:02:03.271Z",
+            "modified": "2023-12-05T16:04:27.839Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
