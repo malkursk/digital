@@ -1,0 +1,17 @@
+[
+    {
+        "model": "my.account",
+        "fields": {
+            "login": "uu-001",
+            "passw": "pp-001",
+            "busy": null,
+            "fio": null,
+            "phone": null,
+            "org": null,
+            "region": null,
+            "comment": null,
+            "created_at": "2023-12-29T13:54:29.232Z",
+            "updated_at": "2023-12-29T13:54:29.232Z"
+        }
+    }
+]

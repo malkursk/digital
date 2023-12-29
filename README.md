@@ -15,3 +15,7 @@
 4. Переход в папку с основным проектом: cd projectName
 5. Запуск проекта: python manage.py runserver
 #### Повторный запуск (после перезапуска IDE или неактивном venv) - п.2, п.4, п.5
+
+выгрузка-загрузка данных:
+python manage.py dumpdata my.Account  > .\my\seeders\accounts.json
+python manage.py loaddata  .\my\seeders\accounts.json
