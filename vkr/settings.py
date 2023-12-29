@@ -1,16 +1,8 @@
-
 from pathlib import Path
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 SECRET_KEY = 'django-insecure-62_tp+c_=_1(!vijq22d9vcbma4xm@_q4@ay!4%o7=pl@k=b_k'
-
 DEBUG = True
-
 ALLOWED_HOSTS = []
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -19,6 +11,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'my.apps.MyConfig'
 ]
 
 MIDDLEWARE = [
@@ -51,7 +44,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -62,8 +54,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
