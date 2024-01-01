@@ -13,6 +13,12 @@ class Account(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     class Meta :
+        db_table = "account"
         verbose_name_plural = 'Учетные записи'
         verbose_name = 'Учетная запись'
         ordering = ['-updated_at']
+
+class Test(models.Model):
+    info = models.CharField(max_length=255)
+    class Meta :
+        db_table = "test"

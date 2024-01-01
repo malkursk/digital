@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая запись</title>
+</head>
+
+<body>
+    <form method="POST" class="post-form" action="/create">
+        {% csrf_token %}
+        {{ form.info }}
+        <button type="submit">Отправить</button>
+        </div>
+    </form>
+</body>
+
+</html>
