@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my/css/style.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body class="container">
+    <aside>
+        <img src="{%static 'my/img/z.png'%}" alt="Лого">
+        <h3>Z-Меню</h3>
+        <ul>
+            <li><a href="{%url 'url_list'%}">Главная</a></li>
+            <li><a href="{%url 'url_create'%}">Добавить</a></li>
+        </ul>               
+    </aside>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>

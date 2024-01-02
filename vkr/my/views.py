@@ -20,11 +20,11 @@ def create(request):
                 pass
     else:  
         form = TestForm()  
-    return render(request,'create.html',{'form':form})  
+    return render(request,'my/create.html',{'form':form})  
 
 def list(request):  
     data = Test.objects.all()  
-    return render(request,'list.html',{'data':data}) 
+    return render(request,'my/list.html',{'data':data}) 
 
 def update(request, id):  
     data = Test.objects.get(id=id)  
@@ -32,7 +32,7 @@ def update(request, id):
     if form.is_valid():  
         form.save()  
         return redirect("/list")  
-    return render(request, 'edit.html', {'data': data})  
+    return render(request, 'my/edit.html', {'data': data})  
 
 def destroy(request, id):  
     data = Test.objects.get(id=id)  
