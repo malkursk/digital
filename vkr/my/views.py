@@ -2,12 +2,8 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from my.forms import *
 from my.models import *
+from rest_framework import viewsets
 
-def main(request):
-    return HttpResponse("Успешный запуск сервиса")
-
-def test(request, val):
-    return HttpResponse(f"Тестовый параметр: {val}")
 
 def create(request):  
     if request.method == "POST":  
@@ -39,3 +35,10 @@ def destroy(request, id):
     data.delete()  
     return redirect("/list")   
 
+
+from my.serializers import TestSerializer
+from my.models import Test
+
+class TestViewSet(viewsets.ModelViewSet):
+    queryset = Test.objects.all().order_by('updated_at')
+    serializer_class =TestSerializer
