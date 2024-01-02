@@ -19,6 +19,10 @@ class Account(models.Model):
         ordering = ['-updated_at']
 
 class Test(models.Model):
-    info = models.CharField(max_length=255)
+    info = models.CharField(verbose_name='информация', max_length=255)
+    enable = models.BooleanField(verbose_name='доступна', null=True, default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)    
     class Meta :
         db_table = "test"
+        ordering = ['-updated_at']

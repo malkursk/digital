@@ -17,7 +17,9 @@
         <thead class="table-dark">
             <tr>
                 <th>id</th>
-                <th>Наименование</th>
+                <th>Данные</th>
+                <th>Доступно</th>
+                <th>Актуальность</th>
                 <th>Действия</th>
             </tr>
         </thead>
@@ -26,9 +28,11 @@
             <tr>
                 <td>{{ d.id }}</td>
                 <td>{{ d.info }}</td>
+                <td>{% if d.enable %} Да {% else %} Нет {% endif %}</td>
+                <td>{{ d.updated_at}}</td>
                 <td>
-                    <a href="/edit/{{d.id}}">{%  bs_icon 'pen' %}</a>   
-                    <a href="/delete/{{d.id}}">{%  bs_icon 'trash' %}</a>                    
+                    <a href="/edit/{{d.id}}">{%  bs_icon 'pen' %}</a>
+                    <a href="/delete/{{d.id}}">{%  bs_icon 'trash' %}</a>
                 </td>
             </tr>
             {% endfor %}

@@ -14,8 +14,13 @@
 <body class="container">
     <form method="POST" class="post-form" action="/edit/{{ data.id }}">
         {% csrf_token %}
-        Отредактируйте информацию о мероприятии (id: {{ data.id }}):
-        <input type="text" name="info" required maxlength="100" value="{{ data.info }}" />
+        Отредактируйте данные, id: {{ data.id }}:
+        <input type="text" name="info" required maxlength="100" value="{{ data.info}}" />
+        Доступно:
+        <select class="mt-1" name="enable" id="id_enable">
+            <option value="true">Да</option>
+            <option value="false" {% if not data.enable %} selected {% endif %}>Нет</option>
+        </select>
         <center><button type="submit" class="btn btn-primary mt-2">Применить</button></center>
     </form>
 </body>

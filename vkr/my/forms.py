@@ -4,9 +4,10 @@ from my.models import *
 class AccountForm(forms.ModelForm):  
     class Meta:  
         model = Account  
-        fields = "__all__"
+        fields = ['fio','org','region']
 
 class TestForm(forms.ModelForm):  
     class Meta:  
         model = Test  
-        fields = "__all__"        
+        fields = ['info','enable']
+        # fields = "__all__"        
