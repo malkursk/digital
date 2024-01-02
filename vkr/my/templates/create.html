@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новая запись</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
-<body>
+<body class="container">
     <form method="POST" class="post-form" action="/create">
         {% csrf_token %}
+        Введите информацию о мероприятии:
         {{ form.info }}
-        <button type="submit">Отправить</button>
-        </div>
+        <center><button type="submit" class="btn btn-primary mt-2">Отправить</button></center>
     </form>
 </body>
 

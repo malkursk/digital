@@ -17,7 +17,7 @@ def create(request):
                 form.save()  
                 return redirect('/list')  
             except:  
-                {{ form.errors }}
+                pass
     else:  
         form = TestForm()  
     return render(request,'create.html',{'form':form})  
