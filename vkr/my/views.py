@@ -24,5 +24,18 @@ def create(request):
 
 def list(request):  
     data = Test.objects.all()  
-    return render(request,'list.html',{'data':data})  
+    return render(request,'list.html',{'data':data}) 
+
+def update(request, id):  
+    data = Test.objects.get(id=id)  
+    form = TestForm(request.POST, instance = data)  
+    if form.is_valid():  
+        form.save()  
+        return redirect("/list")  
+    return render(request, 'edit.html', {'data': data})  
+
+def destroy(request, id):  
+    data = Test.objects.get(id=id)  
+    data.delete()  
+    return redirect("/list")   
 

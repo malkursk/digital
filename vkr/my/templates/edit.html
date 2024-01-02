@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body class="container">
+    <form method="POST" class="post-form" action="/edit/{{ data.id }}">
+        {% csrf_token %}
+        Отредактируйте информацию о мероприятии (id: {{ data.id }}):
+        <input type="text" name="info" required maxlength="100" value="{{ data.info }}" />
+        <center><button type="submit" class="btn btn-primary mt-2">Применить</button></center>
+    </form>
+</body>
+
+</html>
