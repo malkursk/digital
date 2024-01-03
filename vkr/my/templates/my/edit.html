@@ -1,18 +1,12 @@
 {% extends 'my/layout.html' %}
 
-{% block title %}Редактирование записи{% endblock%}
+{% block title %}Редактирование, id={{ id }}{% endblock%}
 
 {% block content %}
-<form method="POST" class="post-form" action="/edit/{{ data.id }}">
+<form method="POST" class="post-form" action="/edit/{{ id }}">    
     {% csrf_token %}
-    Отредактируйте данные, id: {{ data.id }}:
-    <input type="text" name="info" required maxlength="100" value="{{ data.info}}" />
-    Доступно:
-    <select class="mt-1" name="enable" id="id_enable">
-        <option value="true">Да</option>
-        <option value="false" {% if not data.enable %} selected {% endif %}>Нет</option>
-    </select>
-    <center><button type="submit" class="btn btn-primary mt-2">Применить</button></center>
+    {{ form.as_p }}    
+    <center><button type="submit" class="btn btn-primary mt-2">Сохранить изменения</button></center>
 </form>
 {% endblock%}
 

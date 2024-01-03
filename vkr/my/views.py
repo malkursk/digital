@@ -11,7 +11,7 @@ def create(request):
         if form.is_valid():  
             try:  
                 form.save()  
-                return redirect('/list')  
+                return redirect('/')  
             except:  
                 pass
     else:  
@@ -19,21 +19,20 @@ def create(request):
     return render(request,'my/create.html',{'form':form})  
 
 def list(request):  
-    data = Test.objects.all()  
-    return render(request,'my/list.html',{'data':data}) 
+    return render(request,'my/list.html',{'data':Test.objects.all()}) 
 
-def update(request, id):  
+def update(request, id):
     data = Test.objects.get(id=id)  
-    form = TestForm(request.POST, instance = data)  
+    form = TestForm(request.POST or None, instance = data)
     if form.is_valid():  
         form.save()  
-        return redirect("/list")  
-    return render(request, 'my/edit.html', {'data': data})  
+        return redirect("/")  
+    return render(request, 'my/edit.html', {'form': form, 'id': id})  
 
 def destroy(request, id):  
     data = Test.objects.get(id=id)  
     data.delete()  
-    return redirect("/list")   
+    return redirect("/")   
 
 
 from my.serializers import TestSerializer

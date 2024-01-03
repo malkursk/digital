@@ -5,8 +5,7 @@
 {% block content %}
 <form method="POST" class="post-form" action="/create">
     {% csrf_token %}
-    Новая запись:
     {{form.as_p }}
-    <center><button type="submit" class="btn btn-primary mt-2">Отправить</button></center>
+    <center><button type="submit" class="btn btn-primary mt-2">Создать</button></center>
 </form>
 {% endblock%}
