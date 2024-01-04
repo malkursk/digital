@@ -7,13 +7,26 @@ a {
     text-decoration: none;
 }
 
+input{
+    width: 100%; 
+}
+
+th{
+    text-align: center;
+}
+
+input[type=checkbox]{
+    width: 20px;
+}
+
+
 aside {
     float: left;
     width: 20%;
 }
 
 main {
-    padding-left: 10px;
+    padding-left: 5px;
     width: 80%;
     float: right;
     border-left: solid;

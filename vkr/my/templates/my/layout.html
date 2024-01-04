@@ -14,14 +14,13 @@
 
 <body class="container">
     <aside>
-        <img src="{%static 'my/img/z.png'%}" width="150"  alt="Лого">
+        <img src="{%static 'my/img/z.png'%}" width="150" alt="Лого">
         <h3>Навигация</h3>
-        <ul>
-            <li><a href="{%url 'url_list'%}">Главная</a></li>
-            <li><a href="{%url 'url_create'%}">Добавить</a></li>
-        </ul>               
+        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>
+        <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>
+        <i class="fa-solid fa-arrow-right-from-bracket m-2"></i></i><a>Выход</a>
     </aside>
-<h3>Web-сервис</h3>
+    <center class="mb-2">Web-сервис</center>
     <main>
         {% block content %}
 
@@ -29,7 +28,7 @@
 
     </main>
 
-    <footer class="fs-7">Все права защищены. Поддержка и сопровождение: ib-swsu@yandex.ru</footer>
+    <footer class="fs-7">Все права защищены ib-swsu@yandex.ru</footer>
 
 </body>
 
