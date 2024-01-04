@@ -21,7 +21,8 @@
             <td>{% if d.enable %} Да {% else %} Нет {% endif %}</td>
             <td>{{ d.updated_at}}</td>
             <td>
-                <a href="/edit/{{d.id}}"><i class="fa-regular fa-pen-to-square"></i></i></a>
+                <a href="/preview/{{d.id}}"><i class="fa-regular fa-eye"></i></i></a>
+                <a href="/update/{{d.id}}"><i class="fa-regular fa-pen-to-square"></i></i></a>
                 <a href="/delete/{{d.id}}"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>

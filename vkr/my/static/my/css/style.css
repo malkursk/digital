@@ -1,11 +1,12 @@
-body{
+body {
     margin: 10px 0;
 }
+
 a {
     text-decoration: none;
 }
 
-input{
+input {
     width: 100%;
 }
 
@@ -18,4 +19,3 @@ main {
     width: 80%;
     float: right;
 }
-

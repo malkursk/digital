@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from my.forms import *
 from my.models import *
 from rest_framework import viewsets
-
+from django.core import serializers
+import json
 
 def create(request):  
     if request.method == "POST":  
@@ -16,10 +17,15 @@ def create(request):
                 pass
     else:  
         form = TestForm()  
-    return render(request,'my/create.html',{'form':form})  
+    return render(request,'my/element.html',{'form':form, 'title':'Новая запись','route': '/create'})  
 
 def list(request):  
     return render(request,'my/list.html',{'data':Test.objects.all()}) 
+
+def preview(request, id):
+    data = serializers.serialize("json", [Test.objects.get(id=id)] )[1:-1]
+    data = json.loads(data)
+    return render(request, 'my/element.html', {'form': data, 'title':'Просмотр, id:' + id})      
 
 def update(request, id):
     data = Test.objects.get(id=id)  
@@ -27,7 +33,7 @@ def update(request, id):
     if form.is_valid():  
         form.save()  
         return redirect("/")  
-    return render(request, 'my/edit.html', {'form': form, 'id': id})  
+    return render(request, 'my/element.html', {'form': form, 'title':'Редактор, id:' + id,'route': '/update/'+id})  
 
 def destroy(request, id):  
     data = Test.objects.get(id=id)  
