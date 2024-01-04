@@ -14,18 +14,23 @@
 
 <body class="container">
     <aside>
-        <img src="{%static 'my/img/z.png'%}" width="100px"  alt="Лого">
+        <img src="{%static 'my/img/z.png'%}" width="150"  alt="Лого">
         <h3>Навигация</h3>
         <ul>
             <li><a href="{%url 'url_list'%}">Главная</a></li>
             <li><a href="{%url 'url_create'%}">Добавить</a></li>
         </ul>               
     </aside>
+<h3>Web-сервис</h3>
     <main>
         {% block content %}
 
         {% endblock %}
+
     </main>
+
+    <footer class="fs-7">Все права защищены. Поддержка и сопровождение: ib-swsu@yandex.ru</footer>
+
 </body>
 
 </html>

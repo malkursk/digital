@@ -1,13 +1,10 @@
 body {
     margin: 10px 0;
+    background-color: antiquewhite;
 }
 
 a {
     text-decoration: none;
-}
-
-input {
-    width: 100%;
 }
 
 aside {
@@ -16,6 +13,14 @@ aside {
 }
 
 main {
+    padding-left: 10px;
     width: 80%;
     float: right;
+    border-left: solid;
+    border-color: rgba(238, 223, 182, 0.747);
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
 }
