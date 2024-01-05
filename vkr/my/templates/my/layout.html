@@ -17,17 +17,18 @@
         <img src="{%static 'my/img/z.png'%}" width="150" alt="Лого">
         <h3>Навигация</h3>
         <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>        
-        {% if user.is_authenticated %}
-            <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>            
+        {% if user.is_authenticated %}     
+            <i class="fa-solid fa-circle-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>            
+            <i class="fa-solid fa-list-check m-2"></i><a href="{%url 'import_from_excel'%}">Импорт из Excel</a><br>               
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
-                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-arrow-right-from-bracket m-1"></i></i>Выход</button>
+                <button class="btn btn-primary m-2" type="submit"><i class="fa-solid fa-arrow-right-from-bracket m-1"></i></i>Выход из {{ request.user }}</button>
             </form>
         {% else %}
         <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="{%url 'login'%}">Вход</a><br>
         {% endif %}
     </aside>
-    <center class="mb-2">Web-сервис, {{ request.user }} {% if request.user.email %} <span class="badge bg-primary"> {{ request.user.email }} </span> {% endif %} </center>
+    <center class="mb-2">Web-сервис {% if request.user.email %} <span class="badge bg-primary"> {{ request.user.email }} </span> {% endif %} </center>
     <main>
         {% block content %}
 

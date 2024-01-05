@@ -18,3 +18,10 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))     
 ]
+
+
+from .views import import_from_excel
+
+urlpatterns += [
+    path('import/', import_from_excel, name='import_from_excel'),
+]
