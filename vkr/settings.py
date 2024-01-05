@@ -4,8 +4,6 @@ SECRET_KEY = 'django-insecure-62_tp+c_=_1(!vijq22d9vcbma4xm@_q4@ay!4%o7=pl@k=b_k
 DEBUG = True
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -13,8 +11,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'bootstrap5',
+    'django.contrib.staticfiles',    
     'rest_framework',
     'my.apps.MyConfig'
 ]
@@ -77,13 +74,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LANGUAGE_CODE = 'ru'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
-
 USE_TZ = True
-
 STATIC_URL = 'static/'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

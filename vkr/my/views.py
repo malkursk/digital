@@ -7,6 +7,7 @@ from django.core import serializers
 import json
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def create(request):  
     if request.method == "POST":  
         form = TestForm(request.POST)
@@ -20,8 +21,7 @@ def create(request):
         form = TestForm()  
     return render(request,'my/element.html',{'form':form, 'title':'Новая запись','route': '/create'})  
 
-@login_required
-def list(request):  
+def list(request): 
     return render(request,'my/list.html',{'data':Test.objects.all()}) 
 
 def preview(request, id):
@@ -29,6 +29,7 @@ def preview(request, id):
     data = json.loads(data)
     return render(request, 'my/element.html', {'form': data, 'title':'Просмотр, id:' + id})      
 
+@login_required
 def update(request, id):
     data = Test.objects.get(id=id)  
     form = TestForm(request.POST or None, instance = data)
@@ -37,6 +38,7 @@ def update(request, id):
         return redirect("/")  
     return render(request, 'my/element.html', {'form': form, 'title':'Редактор, id:' + id,'route': '/update/'+id})  
 
+@login_required
 def destroy(request, id):  
     data = Test.objects.get(id=id)  
     data.delete()  
