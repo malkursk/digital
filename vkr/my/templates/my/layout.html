@@ -16,9 +16,13 @@
     <aside>
         <img src="{%static 'my/img/z.png'%}" width="150" alt="Лого">
         <h3>Навигация</h3>
-        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>
-        <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>
-        <i class="fa-solid fa-arrow-right-from-bracket m-2"></i></i><a>Выход</a>
+        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>        
+        {% if user.is_authenticated %}
+            <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>
+            <i class="fa-solid fa-arrow-right-from-bracket m-2"></i></i><a href="{%url 'logout'%}">Выход</a>
+        {% else %}
+        <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="{%url 'login'%}">Вход</a><br>
+        {% endif %}
     </aside>
     <center class="mb-2">Web-сервис</center>
     <main>

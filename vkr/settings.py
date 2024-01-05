@@ -4,6 +4,9 @@ SECRET_KEY = 'django-insecure-62_tp+c_=_1(!vijq22d9vcbma4xm@_q4@ay!4%o7=pl@k=b_k
 DEBUG = True
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

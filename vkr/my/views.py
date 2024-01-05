@@ -5,6 +5,7 @@ from my.models import *
 from rest_framework import viewsets
 from django.core import serializers
 import json
+from django.contrib.auth.decorators import login_required
 
 def create(request):  
     if request.method == "POST":  
@@ -19,6 +20,7 @@ def create(request):
         form = TestForm()  
     return render(request,'my/element.html',{'form':form, 'title':'Новая запись','route': '/create'})  
 
+@login_required
 def list(request):  
     return render(request,'my/list.html',{'data':Test.objects.all()}) 
 
