@@ -44,4 +44,7 @@ class Winner(models.Model): # призёры
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    class Meta:        
+        unique_together = ('game', 'person')
+    
     
