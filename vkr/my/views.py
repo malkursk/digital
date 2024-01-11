@@ -1,7 +1,15 @@
 from django.shortcuts import redirect, render, HttpResponse
 from openpyxl import load_workbook
-
 from my.models import Person
+
+from rest_framework import viewsets
+from .serializers import SportSerializer
+from .models import Sport
+
+class SportViewSet(viewsets.ModelViewSet):
+    queryset = Sport.objects.all().order_by('name')
+    serializer_class = SportSerializer
+
 
 def import_person_from_excel(request):
     if request.method == 'POST':

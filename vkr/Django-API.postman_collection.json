@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "615a8667-c0e2-41e0-add4-e6a998f4ab6e",
+		"name": "Django-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6789338",
+		"_collection_link": "https://www.postman.com/planetary-station-75134/workspace/django-rest/collection/6789338-615a8667-c0e2-41e0-add4-e6a998f4ab6e?action=share&source=collection_link&creator=6789338"
+	},
+	"item": [
+		{
+			"name": "sport",
+			"item": [
+				{
+					"name": "sport-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Пляжный волейбол",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/sport/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sport",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sport-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/sport/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sport",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sport-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Коньки на колёсах",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/sport/6/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sport",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sport-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Коньки на колёсах",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/sport/1001/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sport",
+								"1001",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "person",
+			"item": [
+				{
+					"name": "person-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Пляжный волейбол",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/person/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "person-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/person/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "person-delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Коньки на колёсах",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/person/6/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "person-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Коньки на колёсах",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/person/1001/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								"1001",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.environment.set('access_token', res.access);\r",
+							"pm.environment.set('refresh_token', res.refresh);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/refresh-token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-verify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/token-verify",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"token-verify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
