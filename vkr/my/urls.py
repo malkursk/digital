@@ -11,6 +11,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'sport', views.SportViewSet)
+router.register(r'person', views.PersonViewSet)
 
 
 urlpatterns = [

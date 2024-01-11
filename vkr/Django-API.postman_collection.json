@@ -11,6 +11,41 @@
 			"name": "sport",
 			"item": [
 				{
+					"name": "sport-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/sport/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sport",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "sport-create",
 					"request": {
 						"auth": {
@@ -34,41 +69,6 @@
 									"type": "text"
 								}
 							]
-						},
-						"url": {
-							"raw": "{{host}}/sport/",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"sport",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "sport-list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
 						},
 						"url": {
 							"raw": "{{host}}/sport/",
@@ -167,6 +167,47 @@
 			"name": "person",
 			"item": [
 				{
+					"name": "person-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/person/?page=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"person",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "person-create",
 					"request": {
 						"auth": {
@@ -190,41 +231,6 @@
 									"type": "text"
 								}
 							]
-						},
-						"url": {
-							"raw": "{{host}}/person/",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"person",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "person-list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
 						},
 						"url": {
 							"raw": "{{host}}/person/",
@@ -265,13 +271,13 @@
 							]
 						},
 						"url": {
-							"raw": "{{host}}/person/6/",
+							"raw": "{{host}}/person/1/",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"person",
-								"6",
+								"1",
 								""
 							]
 						}
@@ -294,23 +300,22 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Коньки на колёсах",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Аристарх-Имя спортсмена с id=501\",\r\n    \"last_name\": \"ААА-Фамильный\",\r\n    \"born\": \"1983-01-01\",        \r\n     \"address\": \"это лучший город!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
-							"raw": "{{host}}/person/1001/",
+							"raw": "{{host}}/person/501/",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"person",
-								"1001",
+								"501",
 								""
 							]
 						}
@@ -366,6 +371,18 @@
 		},
 		{
 			"name": "refresh-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.environment.set('access_token', res.access);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],

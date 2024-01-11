@@ -3,12 +3,16 @@ from openpyxl import load_workbook
 from my.models import Person
 
 from rest_framework import viewsets
-from .serializers import SportSerializer
-from .models import Sport
+from .serializers import SportSerializer, PersonSerializer
+from .models import Sport, Person
 
 class SportViewSet(viewsets.ModelViewSet):
-    queryset = Sport.objects.all().order_by('name')
+    queryset = Sport.objects.all().order_by('id')
     serializer_class = SportSerializer
+
+class PersonViewSet(viewsets.ModelViewSet):
+    queryset = Person.objects.all().order_by('last_name')
+    serializer_class = PersonSerializer    
 
 
 def import_person_from_excel(request):
