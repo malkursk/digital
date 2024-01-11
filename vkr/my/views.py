@@ -16,9 +16,17 @@ class PersonViewSet(viewsets.ModelViewSet):
 
 from django.http import JsonResponse
 
+def winners_detail(request):
+    data = Winner.objects.all()
+    serialize = WinnerSerializer(data, many=True)
+    return JsonResponse({'title':'winners','total': len(data),'data': serialize.data}, safe=False)
+
 def test(request):
-    serialize = WinnerSerializer(Winner.objects.all(), many=True)
-    return JsonResponse({'winners': serialize.data}, safe=False)
+    sports = Sport.objects.all().order_by('name')
+    arr = []
+    for sport in sports:
+        arr.append({'id': sport.id, 'name': sport.name, 'count': Winner.objects.filter(sport=sport.id).count()})        
+    return JsonResponse({'title':'grades','total' : Winner.objects.all().count(), 'data': arr }, safe=False)
 
 def import_person_from_excel(request):
     if request.method == 'POST':

@@ -26,11 +26,15 @@ python manage.py shell
 import random
 from django_seed import Seed
 from django.contrib.auth import get_user_model 
+from my.models import *
 seeder = Seed.seeder()
-print(ToDoItem.objects.filter(id=random.choice(range(1, 50))).first()) # example for random record in range
-seeder.add_entity(ToDoItem, 50, {
-    'todolist_id':    ToDoList.objects.first(),
-    'borrower': get_user_model().objects.first(),
+# print(ToDoItem.objects.filter(id=random.choice(range(1, 50))).first()) # example for random record in range
+seeder.add_entity(Person, 100)
+
+seeder.add_entity(Winner, 5, {
+    'game':    Game.objects.filter(uid='76a335c8-7cfe-4a42-bfdf-d05f903f2085').first(),
+    'sport': Sport.objects.filter(id=random.choice(range(1, 5))).first(),
+    'person': Person.objects.filter(id=random.choice(range(1, 110))).first()
 })
 seeder.execute()
 
