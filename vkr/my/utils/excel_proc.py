@@ -2,6 +2,8 @@ from django.http import HttpResponse
 import openpyxl
 from my.models import *
 
+
+
 def export_to_excel(request, v):
     model = None
     fields = None
@@ -27,6 +29,7 @@ def export_to_excel(request, v):
 
     wb = openpyxl.Workbook()     
     ws  = wb.active     
+    ws.title = v
     col = row = 1
     if not fields:
         fields = list([field.name for field in model._meta.get_fields()]);

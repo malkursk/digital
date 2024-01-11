@@ -16,16 +16,16 @@
     <aside>        
         <img src="{%static 'my/img/z.png'%}" width="150" alt="Лого">
         <h3>Навигация</h3>
-        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>        
+        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="">Главная</a><br>        
         {% if user.is_authenticated %}     
-            <i class="fa-solid fa-circle-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>            
-            <i class="fa-solid fa-list-check m-2"></i><a href="{%url 'import_from_excel'%}">Импорт из Excel</a><br>               
-            <form method="post" action="{% url 'logout' %}">
+            <i class="fa-solid fa-circle-plus m-2"></i><a href="">Добавить</a><br>            
+            <i class="fa-solid fa-list-check m-2"></i><a href="">Импорт из Excel</a><br>               
+            <form method="post" action="">
                 {% csrf_token %}
                 <button class="btn btn-primary m-2" type="submit"><i class="fa-solid fa-arrow-right-from-bracket m-1"></i></i>Выход из {{ request.user }}</button>
             </form>
         {% else %}
-        <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="{%url 'login'%}">Вход</a><br>
+        <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="">Вход</a><br>
         {% endif %}
     </aside>
     <center class="mb-2">Web-сервис {% if request.user.email %} <span class="badge bg-primary"> {{ request.user.email }} </span> {% endif %} </center>
