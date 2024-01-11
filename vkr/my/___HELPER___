@@ -14,6 +14,8 @@ python manage.py runserver
 python manage.py makemigrations   
 python manage.py migrate
 
+python manage.py createsuperuser
+
 === ALL_SEEDERS ===
 python manage.py seed my --number=10
 
@@ -35,6 +37,7 @@ seeder.execute()
 === UPDATE_DATA ===
 from django.db import connection
 Game.objects.update(date_to='2024-01-01')
+get_user_model().objects.update(password='secret')
 sql = "UPDATE my_game SET date_to = (date_from + INTERVAL '30 day')" 
 sql = "UPDATE my_person SET born = (born - INTERVAL '18 year') WHERE born > '2010-01-01'"
 connection.cursor().execute(sql)

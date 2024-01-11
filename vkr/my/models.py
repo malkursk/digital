@@ -40,7 +40,7 @@ class Winner(models.Model): # призёры
         (2, 'II место, серебро'),
         (3, 'III место, бронза'),
     )
-    place = models.IntegerField(choices=DICT)
+    grade = models.IntegerField(choices=DICT)
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
