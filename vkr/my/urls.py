@@ -20,6 +20,10 @@ urlpatterns = [
 ]
 
 urlpatterns += [    
+    path('test', views.test),      
+]
+
+urlpatterns += [    
     path('model_to_excel/<str:v>', export_to_excel),  
     path('excel_to_person', import_person_from_excel),  
 ]

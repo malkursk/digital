@@ -3,8 +3,8 @@ from openpyxl import load_workbook
 from my.models import Person
 
 from rest_framework import viewsets
-from .serializers import SportSerializer, PersonSerializer
-from .models import Sport, Person
+from .serializers import *
+from .models import *
 
 class SportViewSet(viewsets.ModelViewSet):
     queryset = Sport.objects.all().order_by('id')
@@ -14,6 +14,11 @@ class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all().order_by('last_name')
     serializer_class = PersonSerializer    
 
+from django.http import JsonResponse
+
+def test(request):
+    serialize = WinnerSerializer(Winner.objects.all(), many=True)
+    return JsonResponse({'winners': serialize.data}, safe=False)
 
 def import_person_from_excel(request):
     if request.method == 'POST':
