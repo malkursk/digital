@@ -14,7 +14,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',   
     'my.apps.MyConfig',
-    'django_seed'
+    'django_seed',
+    'admin_soft.apps.AdminSoftDashboardConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # https://www.jetbrains.com/guide/django/tutorials/django-aws/rest-api-jwt/
 REST_FRAMEWORK = {

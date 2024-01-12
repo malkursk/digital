@@ -16,4 +16,5 @@ urlpatterns = [
 urlpatterns += [    
     path('admin/', admin.site.urls),
     path('', include('my.urls')),
+    path('demo/', include('admin_soft.urls')),
 ]

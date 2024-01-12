@@ -45,3 +45,6 @@ get_user_model().objects.update(password='secret')
 sql = "UPDATE my_game SET date_to = (date_from + INTERVAL '30 day')" 
 sql = "UPDATE my_person SET born = (born - INTERVAL '18 year') WHERE born > '2010-01-01'"
 connection.cursor().execute(sql)
+
+=== DASHBOARD ===
+https://pypi.org/project/django-admin-soft-dashboard/
