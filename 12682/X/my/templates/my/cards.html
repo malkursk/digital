@@ -1,0 +1,21 @@
+{% extends 'my/layout.html' %}
+
+{% block title %}Новости{% endblock%}
+
+{% block content %}
+
+{%for d in data%}
+
+<div class="card">
+    <h5 class="card-header">хай</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ caption }}</h5>
+      <p class="card-text">{{ d.full_text }}</p>
+      <a href="/preview/{{d.id}}">спасибо, но нет</a>
+    </div>
+  </div>
+
+{%endfor%}
+{% endblock%}
+
+
