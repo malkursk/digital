@@ -16,6 +16,7 @@
     <aside>        
         <img src="{%static 'my/img/z.png'%}" width="150" alt="Лого">
         <h3>Навигация</h3>
+        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_news'%}">Новости</a><br> 
         <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{%url 'url_list'%}">Главная</a><br>        
         {% if user.is_authenticated %}
             <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'url_create'%}">Добавить</a><br>            
@@ -25,7 +26,7 @@
             </form>
         {% else %}
         <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="{%url 'login'%}">Вход</a><br>
-        {% endif %}
+        {% endif %}    
     </aside>
     <center class="mb-2">Web-сервис, {{ request.user }} {% if request.user.email %} <span class="badge bg-primary"> {{ request.user.email }} </span> {% endif %} </center>
     <main>

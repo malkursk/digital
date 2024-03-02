@@ -23,17 +23,23 @@ input[type=checkbox] {
 aside {
     float: left;
     width: 20%;
+    background-color: bisque;
 }
 
 main {
     padding-left: 5px;
     width: 80%;
     float: right;
-    border-left: solid;
-    border-color: rgba(90, 84, 66, 0.747);
 }
 
 footer {
     position: absolute;
     bottom: 10px;
 }
+
+
+
+
+
+
+

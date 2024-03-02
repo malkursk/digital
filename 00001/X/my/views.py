@@ -20,6 +20,9 @@ def create(request):
 def list(request): 
     return render(request,'my/list.html',{'data':News.objects.all()}) 
 
+def cards(request): 
+    return render(request,'my/cards.html',{'data':News.objects.all()}) 
+
 def preview(request, id):
     data = serializers.serialize("json", [News.objects.get(id=id)] )[1:-1]
     data = json.loads(data)
