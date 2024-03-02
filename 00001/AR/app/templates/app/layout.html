@@ -18,17 +18,22 @@
         <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{% url 'cards' %}">Новости</a><br> 
         <i class="fa-regular fa-circle-question m-2"></i></i></i><a href="{% url 'about' %}">О нас</a><br>        
         {% if user.is_authenticated %}
-            <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="">Добавить</a><br>            
+            <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="{%url 'create'%}">Добавить</a><br>            
             <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button class="btn btn-primary" type="submit"><i class="fa-solid fa-arrow-right-from-bracket m-1"></i></i>Выход</button>
             </form>
         {% else %}
-        <i class="fa-solid fa-arrow-right-to-bracket m-2"></i><a href="{%url 'login'%}">Вход</a><br>
+        
         {% endif %}    
     </aside>
+    {% if user.is_authenticated %}
     <center class="mb-2">Web-сервис, {{ request.user }} {% if request.user.email %} <span class="badge bg-primary"> {{ request.user.email }} </span> {% endif %} </center>
+    {% else %}
+    <center class="mb-2">Для добавления новостей необходим <a href="{%url 'login'%}">вход</a> в систему </center>
+    {% endif %}     
     <main>
+        
         {% block content %}
 
         {% endblock %}

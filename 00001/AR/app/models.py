@@ -5,14 +5,14 @@ from django.db.models.functions import Length
 models.CharField.register_lookup(Length)
 
 class News(models.Model):
-    caption = models.CharField('заголовок новости', max_length=95)
-    annotation = models.CharField('заголовок новости', max_length=300)
-    full_text = models.TextField('полный текст новости')
-    last_name = models.CharField('фамилия', max_length=30)
+    caption = models.CharField('заголовок', max_length=95)
+    annotation = models.CharField('аннотация', max_length=300)
+    full_text = models.TextField('полный текст')
+    last_name = models.CharField('фамилия автора', max_length=30)
     address = models.CharField('адрес', max_length=60)
-    phone_number = models.CharField('номер телефона пользователя', max_length=11)
+    phone_number = models.CharField('номер телефона', max_length=11)
     is_public = models.BooleanField('для открытой печати', default=False)
-    img_url = models.CharField('заголовок новости', max_length=300, null=True)
+    img_url = models.CharField('ссылка на картинку', max_length=300, null=True)
     updated_at = models.DateTimeField(auto_now=True)    
     created_at = models.DateTimeField(auto_now_add=True)  
     class Meta:

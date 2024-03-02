@@ -1,14 +1,16 @@
 body {
     margin: 10px 0;
-    background-color: rgb(233, 191, 151);
+    background-color: rgb(173, 165, 156);
 }
 
 a {
     text-decoration: none;
 }
 
-input {
+input,
+textarea {
     width: 100%;
+    border-radius: 5px;
 }
 
 th {
@@ -23,11 +25,9 @@ input[type=checkbox] {
     width: 20px;
 }
 
-
 aside {
     float: left;
     width: 20%;
-    border-right: 1px;
 }
 
 main {
@@ -37,13 +37,6 @@ main {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
 }
-
-
-
-
-
-
-
