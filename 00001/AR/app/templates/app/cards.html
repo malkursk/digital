@@ -1,0 +1,18 @@
+{% extends 'app/layout.html' %}
+
+{% block title %}Список{% endblock%}  
+
+{% block content %}
+    Список новостей
+    {% for d in data %}
+    <div class="card">
+        <h5 class="card-header">{{ d.caption }}</h5>
+        <div class="card-body">
+          <p class="card-text">{{ d.annotation }}</p>
+          <a href="/preview/{{d.id}}" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>             
+    {% endfor %}
+{% endblock%}
+
+

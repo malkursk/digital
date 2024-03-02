@@ -15,8 +15,8 @@
     <aside>    
         <img id="my-img" src="{%static 'app/img/z_off.png'%}" onmouseover="hover(this);" onmouseout="unhover(this);" width="128" alt="Лого"/>    
         <h3>Навигация</h3>
-        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="">Новости</a><br> 
-        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="">Главная</a><br>        
+        <i class="fa-solid fa-house-user m-2"></i></i></i><a href="{% url 'cards' %}">Новости</a><br> 
+        <i class="fa-regular fa-circle-question m-2"></i></i></i><a href="{% url 'about' %}">О нас</a><br>        
         {% if user.is_authenticated %}
             <i class="fa-sharp fa-solid fa-plus m-2"></i><a href="">Добавить</a><br>            
             <form method="post" action="{% url 'logout' %}">
