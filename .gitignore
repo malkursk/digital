@@ -6,3 +6,4 @@
 *.db
 vkr/my/migrations/
 00001/X/my/migrations/
+00001/AR/app/migrations/
