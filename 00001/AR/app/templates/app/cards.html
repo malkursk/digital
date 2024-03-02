@@ -4,6 +4,27 @@
 
 {% block content %}
     Список новостей
+
+    {% if data.number %}
+    <div class="pagination">
+      <span class="step-links">
+          {% if data.has_previous %}
+              <a href="?page=1">&laquo; В начало</a>
+              <a href="?page={{ data.previous_page_number }}">Предыдущая</a>
+          {% endif %}
+  
+          <span class="current">
+              Текущая страница: {{ data.number }} из {{ data.paginator.num_pages }}.
+          </span>
+  
+          {% if data.has_next %}
+              <a href="?page={{ data.next_page_number }}">Следующая</a>
+              <a href="?page={{ data.paginator.num_pages }}">В конец &raquo;</a>
+          {% endif %}
+      </span>
+    </div>
+    {% endif %}
+
     {% for d in data %}
     <div class="card">
         <h5 class="card-header">{{ d.caption }}</h5>
