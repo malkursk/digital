@@ -20,7 +20,7 @@ def preview(request, id):
 
 def cards_page(request):
     contact_list = News.objects.all()
-    paginator = Paginator(contact_list, 25)
+    paginator = Paginator(contact_list, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     return render(request, "app/cards.html", {"data": page_obj})

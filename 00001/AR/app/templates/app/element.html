@@ -16,7 +16,13 @@
     <span class="col-2">
         <h6>{{key}}</h6>
     </span>
-    <span class="col-10">{{ value }}</span>
+    <span class="col-10">
+        {% if key == 'img_url' %}
+        <img src="{{ value }}" width="400" alt="Изображение" />
+        {% else %}
+        {{ value }}
+        {% endif %}
+    </span>
 </div>
 {% endfor %}
 {% endif %}

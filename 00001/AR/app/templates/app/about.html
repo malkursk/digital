@@ -1,10 +1,20 @@
 {% extends 'app/layout.html' %}
+{% load static %}
 
 {% block title %}{{ title }}{% endblock%}
 
 {% block content %}
 
-<h1>Добро пожаловать</h1>
-Эта страница дает общее представление о нашей системе
+<h5 class="text-center">Добро пожаловать</h5>
+<div class="row mt-3">
+    <div class="col-md-2">
+        <img id="my-img" src="{%static 'app/img/z_off.png'%}" onmouseover="hover(this);" onmouseout="unhover(this);"
+            width="64" alt="Лого" />
+    </div>
+    <div class="col-10">
+        Здесь будет описание нашей системы
+    </div>
+
+</div>
 
 {% endblock%}
