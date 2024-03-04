@@ -56,3 +56,10 @@ def create(request):
     else:  
         form = NewsForm()  
     return render(request,'app/element.html',{'form':form, 'title':'Новая запись','route': '/create'})  
+
+from rest_framework import viewsets
+from .serializers import *
+
+class NewsViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer
