@@ -21,7 +21,8 @@ def preview(request, id):
 
 def cards(request):
     query = request.GET.get("search")
-    if (query):
+    if (query):        
+        query = query.replace("\\","")
         list = News.objects.filter(Q(caption__iregex=query) | Q(annotation__iregex=query))
     else:
         list = News.objects.all()    
