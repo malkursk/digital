@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app.forms import NewsForm
 from app.models import News
-from django.core import serializers
+from django.core import serializers as core_serializers
 import json
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -15,7 +15,7 @@ def about(request):
     return render(request,'app/about.html',{'title':'О нас'}) 
 
 def preview(request, id):
-    data = serializers.serialize("json", [News.objects.get(id=id)] )[1:-1]
+    data = core_serializers.serialize("json", [News.objects.get(id=id)] )[1:-1]
     data = json.loads(data)
     return render(request, 'app/element.html', {'form': data, 'title':'Просмотр, id:' + id})    
 
@@ -25,6 +25,7 @@ def cards(request):
         query = query.replace("\\","")
         list = News.objects.filter(Q(caption__iregex=query) | Q(annotation__iregex=query))
     else:
+        query = ""
         list = News.objects.all()    
     paginator = Paginator(list, 10)
     page_number = request.GET.get("page")

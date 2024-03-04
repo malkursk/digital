@@ -12,7 +12,7 @@ urlpatterns = [
     path('preview/<id>',  views.preview, name="preview"),       
     path('update/<id>',  views.update,name="update"),   
     path('delete/<int:id>',  views.destroy, name="destroy"),     
-    path("about", views.about, name="about"),
+    path('about', views.about, name="about"),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
