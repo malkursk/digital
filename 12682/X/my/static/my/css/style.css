@@ -1,0 +1,48 @@
+body {
+    margin: 10px 0;
+    background-color: rgb(84, 184, 166);
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+
+input[type=checkbox] {
+    width: 20px;
+}
+
+
+aside {
+    float: left;
+    width: 20%;
+    background-color: rgba(64, 154, 145, 0.747);
+    color: rgba(0, 214, 237, 0.89);
+    border-radius: 75px;
+    img {
+        max-inline-size: 100%;
+        block-size: auto;
+    }
+    
+}
+
+main {
+    padding-left: 5px;
+    width: 80%;
+    float: right;
+    background-color: rgba(64, 154, 145, 0.747);
+    /* border-left: solid;
+    border-color: rgba(90, 84, 66, 0.747); */
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+}
