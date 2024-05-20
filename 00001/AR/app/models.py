@@ -24,3 +24,10 @@ class News(models.Model):
                 name="%(app_label)s_%(class)s_phone_number_length",
             )
         ]
+
+class Users(models.Model):
+    tg_fio = models.CharField(max_length=100)
+    tg_id = models.CharField(max_length=20)
+    secure = models.BooleanField(default=False)
+    updated_at = models.DateTimeField(auto_now=True)    
+    created_at = models.DateTimeField(auto_now_add=True)      
