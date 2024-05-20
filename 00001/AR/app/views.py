@@ -7,6 +7,11 @@ import json
 from django.core.paginator import Paginator
 from django.db.models import Q
 
+from django.conf import settings
+import telegram 
+
+
+bot = telegram.Bot(token=settings.TELEGRAM_API_TOKEN)
 
 def index(request):
     return HttpResponse("Это тестовая страница нашей выпускной работы!!!")
@@ -20,6 +25,9 @@ def preview(request, id):
     return render(request, 'app/element.html', {'form': data, 'title':'Просмотр, id:' + id})    
 
 def cards(request):
+    all_users = Users.objects.filter(secure=True).all()
+    for v in all_users:        
+        bot.send_message(chat_id=v.tg_id, text='Произошел инцидент!')    
     query = request.GET.get("search")
     if (query):        
         query = query.replace("\\","")
