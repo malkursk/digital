@@ -33,6 +33,7 @@
     <img src="{{ d.img_url }}" width="150" alt="Изображение" />
     {% endif %}
     <p class="card-text">{{ d.annotation }}</p>
+    <p class="card-text"><b>Автор: </b>{{ d.last_name }}</p>
     <a href="/preview/{{d.id}}"><i class="fa-regular fa-eye"></i></i></a>
     {% if user.is_authenticated %}
     <a href="/update/{{d.id}}"><i class="fa-regular fa-pen-to-square"></i></i></a>

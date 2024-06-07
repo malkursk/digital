@@ -25,13 +25,13 @@ def preview(request, id):
     return render(request, 'app/element.html', {'form': data, 'title':'Просмотр, id:' + id})    
 
 def cards(request):
-    all_users = Users.objects.filter(secure=True).all()
-    for v in all_users:        
-        bot.send_message(chat_id=v.tg_id, text='Произошел инцидент!')    
+    # all_users = Users.objects.filter(secure=True).all()
+    # for v in all_users:        
+    #     bot.send_message(chat_id=v.tg_id, text='Произошел инцидент!')    
     query = request.GET.get("search")
     if (query):        
         query = query.replace("\\","")
-        list = News.objects.filter(Q(caption__iregex=query) | Q(annotation__iregex=query))
+        list = News.objects.filter(Q(caption__iregex=query) | Q(annotation__iregex=query) | Q(last_name__iregex=query))
     else:
         query = ""
         list = News.objects.all()    
@@ -49,8 +49,8 @@ def update(request, id):
     return render(request, 'app/element.html', {'form': form, 'title':'Редактор, id:' + id,'route': '/update/'+id})  
 
 def destroy(request, id):  
-    data = News.objects.get(id=id)  
-    data.delete()  
+    # data = News.objects.get(id=id)  
+    # data.delete()  
     return redirect("/")
 
 def create(request):  
