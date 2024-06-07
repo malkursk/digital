@@ -8,10 +8,10 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 
 from django.conf import settings
-import telegram 
+# import telegram 
 
 
-bot = telegram.Bot(token=settings.TELEGRAM_API_TOKEN)
+# bot = telegram.Bot(token=settings.TELEGRAM_API_TOKEN)
 
 def index(request):
     return HttpResponse("Это тестовая страница нашей выпускной работы!!!")
