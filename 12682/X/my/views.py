@@ -40,3 +40,6 @@ def destroy(request, id):
 
 def cards(request):
     return render(request,'my/cards.html',{'data':News.objects.all()}) 
+
+def about(request):
+    return render(request,'my/about.html',{'data':News.objects.all()}) 

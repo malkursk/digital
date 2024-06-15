@@ -9,13 +9,22 @@
     {{form.as_p }}
     <center><button type="submit" class="btn btn-primary mt-2">Применить</button></center>
 </form>
-{% else %}
-    <h5>element {{ form.pk }}</h5>
-    {% for key, value in form.fields.items %}
-        <p>
-            <span class="col-2 badge bg-success">{{key}}</span>
-             {{ value }}</p>
-    {% endfor %}
-   
-{% endif %}    
+
+{% else %} 
+<h5>Новость, id={{ form.pk }}</h5> 
+{% for key, value in form.fields.items %} 
+<div class="row mt-2"> 
+    <span class="col-2"> 
+        <h6>{{key}}</h6> 
+    </span> 
+    <span class="col-10"> 
+        {% if key == 'img_url' %} 
+        <img src="{{ value }}" width="400" alt="Изображение" /> 
+        {% else %} 
+        {{ value }} 
+        {% endif %} 
+    </span> 
+</div> 
+{% endfor %} 
+{% endif %} 
 {% endblock%}

@@ -9,4 +9,5 @@ urlpatterns = [
     path('update/<id>',  update),   
     path('delete/<int:id>',  destroy), 
     path('news', cards, name='url_news'),
+    path('about', about, name='url_about'),
 ]

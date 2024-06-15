@@ -5,15 +5,17 @@
 {% block content %}
 
 {%for d in data%}
-
-<div class="card">
-    <h5 class="card-header">хай</h5>
-    <div class="card-body">
-      <h5 class="card-title">{{ caption }}</h5>
-      <p class="card-text">{{ d.full_text }}</p>
-      <a href="/preview/{{d.id}}">спасибо, но нет</a>
-    </div>
-  </div>
+<div class="upward"></div>
+<div class="card mb-3" style="max-width: 500px;">
+      <div class="card-body">
+        {% if 'http' in d.img_url %} 
+        <p align=center><img src="{{ d.img_url }}" width="220" alt="Изображение" /> </p> 
+        {% endif %}
+        <h5 class="card-title"> <p align=center> {{ d.caption }}</h5></p> 
+    <p class="card-text"><p align=center>{{ d.full_text }}</p></p> 
+    <a href="/preview/{{d.id}}"><p align=center>Обзор</a></p>
+      </div>
+</div>
 
 {%endfor%}
 {% endblock%}

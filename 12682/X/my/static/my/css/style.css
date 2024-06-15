@@ -1,6 +1,9 @@
 body {
     margin: 10px 0;
-    background-color: rgb(84, 184, 166);
+    background-image: url('https://img.goodfon.ru/original/1920x1080/8/9b/wood-chocolate-desert-shokolad-pechene-belyi-molochnyi-chern.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 a {
@@ -23,9 +26,9 @@ input[type=checkbox] {
 aside {
     float: left;
     width: 20%;
-    background-color: rgba(64, 154, 145, 0.747);
+    /*background-color: rgba(64, 154, 145, 0.747);
     color: rgba(0, 214, 237, 0.89);
-    border-radius: 75px;
+    border-radius: 75px;*/
     img {
         max-inline-size: 100%;
         block-size: auto;
@@ -37,7 +40,7 @@ main {
     padding-left: 5px;
     width: 80%;
     float: right;
-    background-color: rgba(64, 154, 145, 0.747);
+    /*background-color: rgba(64, 154, 145, 0.747);
     /* border-left: solid;
     border-color: rgba(90, 84, 66, 0.747); */
 }
