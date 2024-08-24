@@ -17,8 +17,8 @@
         {% for d in data %}
         <tr>
             <td>{{ d.id }}</td>
-            <td>{{ d.info }}</td>
-            <td>{% if d.enable %} Да {% else %} Нет {% endif %}</td>
+            <td>{{ d.caption }}</td>
+            <td>{% if d.is_public %} Да {% else %} Нет {% endif %}</td>
             <td>{{ d.updated_at}}</td>
             <td>
                 <a href="/preview/{{d.id}}"><i class="fa-regular fa-eye"></i></i></a>

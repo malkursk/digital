@@ -6,13 +6,6 @@
   <p>Неверный логин или пароль</p>
 {% endif %}
 
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>У Вас нет доступа к странице</p>
-  {% else %}
-    <p>Требуется аутентификация</p>
-  {% endif %}
-{% endif %}
 
 <form method="post" action="{% url 'login' %}">
   {% csrf_token %}
