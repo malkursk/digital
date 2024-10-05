@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+<script>
+    function converter(value, baseTo=2){        
+        r = ""
+        a = value;         
+        while(a>0){
+            d = Math.floor(a/baseTo);
+            r = (a - d*baseTo) + r;
+            a = d;
+        }        
+        return (value == 0) ? "0" : r
+    }
+    for (i=2; i<10; i*=2){
+        console.log(converter(12345,i))
+    }
+    
+</script>
+<body>    
+</body>
+</html>
