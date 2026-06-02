@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+
+
 from pathlib import Path
 from datetime import timedelta
 
@@ -28,7 +30,15 @@ SECRET_KEY = 'django-insecure-(fbhra+!f*=hdxcn0hh5)1u85x9-v$c7z!csl$1k%ns(g@r^l^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["campus.swsu.ru"]
+ALLOWED_HOSTS = ["campus.swsu.ru","https://campus.swsu.ru:13020", "https://campus.swsu.ru", "http://campus.swsu.ru"]
+
+
+
+DEBUG = False  # Set to False in production
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://campus.swsu.ru:13020',
+]
 
 
 # Application definition
